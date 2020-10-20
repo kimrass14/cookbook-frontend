@@ -5,7 +5,7 @@ import Display from "./Display";
 import Form from "./Form";
 
 function App() {
-  const url = "http://localhost:4500"
+  const url = "http://localhost:4000"
 
     const [cookbooks, setCookbooks] = React.useState([])
 
@@ -57,7 +57,7 @@ function App() {
     fetch(url + '/api/cookbooks/')
     .then(response => response.json())
     .then(data => {
-      setCookbooks(data)
+      setCookbooks(data.data)
     })
   }
   //Get cookbooks on page load
